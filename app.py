@@ -18,6 +18,8 @@ def play(word):
 
     while not guessed and tries > 0:
         guess = input("Please guess a letter or a word: ").upper()
+
+        # Check for valid input (only alphabetic characters)
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
@@ -46,7 +48,7 @@ def play(word):
                 guessed = True
                 word_completion = word
         else:
-            print("Not a valid guess.")
+            print("Invalid input. Please enter a single letter or a valid word consisting only of alphabetic characters.")
         
         print(display_hangman(tries))
         print(word_completion)
